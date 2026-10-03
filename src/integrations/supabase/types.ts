@@ -77,6 +77,50 @@ export type Database = {
         }
         Relationships: []
       }
+      role_audit_log: {
+        Row: {
+          action: string
+          changed_by: string | null
+          changed_by_name: string | null
+          created_at: string
+          id: string
+          role_id: string | null
+          role_name: string
+          role_slug: string
+          target_user_id: string
+        }
+        Insert: {
+          action: string
+          changed_by?: string | null
+          changed_by_name?: string | null
+          created_at?: string
+          id?: string
+          role_id?: string | null
+          role_name: string
+          role_slug: string
+          target_user_id: string
+        }
+        Update: {
+          action?: string
+          changed_by?: string | null
+          changed_by_name?: string | null
+          created_at?: string
+          id?: string
+          role_id?: string | null
+          role_name?: string
+          role_slug?: string
+          target_user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "role_audit_log_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       role_permissions: {
         Row: {
           created_at: string
@@ -180,6 +224,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_admin_users: {
+        Args: never
+        Returns: {
+          avatar_url: string
+          country: string
+          created_at: string
+          display_name: string
+          email: string
+          id: string
+          phone: string
+          status: string
+          username: string
+        }[]
+      }
       get_my_permissions: { Args: never; Returns: string[] }
       has_permission: {
         Args: { _permission: string; _user_id: string }
