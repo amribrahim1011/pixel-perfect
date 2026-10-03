@@ -1,13 +1,8 @@
+import type { ReactNode } from 'react';
 import { Link } from '@/lib/router-compat';
 import {
-  ArrowRight,
-  ShieldCheck,
-  Zap,
-  Trophy,
-  Headphones,
-  ThumbsUp,
-  Flame,
-  Sparkles,
+  ArrowRight, ShieldCheck, Zap, Headphones, Lock, Receipt, Star, Flame, Sparkles,
+  TrendingUp, Swords, Castle, Compass, Bird, Coins, Search, SlidersHorizontal, CreditCard, Trophy,
 } from 'lucide-react';
 import { Button } from '@/components/ak-ui/Button';
 import { Badge } from '@/components/ak-ui/Badge';
@@ -15,314 +10,178 @@ import { ServiceCard } from '@/components/marketplace/ServiceCard';
 import { DealCard } from '@/components/marketplace/DealCard';
 import { ReviewCard } from '@/components/marketplace/ReviewCard';
 import { brand } from '@/lib/brand';
+import heroImg from '@/assets/hero-citadel.jpg';
+import {
+  placeholderServices, placeholderDeals, placeholderReviews, type ServiceIconKey,
+} from '@/lib/home-placeholders';
 
-const popularServices = [
-  {
-    title: 'Mythic+ Dungeon Boost',
-    description: 'Conquer high-level keystones with our expert team. Guaranteed completion.',
-    category: 'Dungeon',
-    game: 'World of Warcraft',
-    deliveryTime: '1–3 hours',
-    rating: 4.9,
-    reviewCount: 1284,
-    badge: 'Popular',
-  },
-  {
-    title: 'Raid Full Clear',
-    description: 'Full raid completion with loot guarantees. Top-tier raid teams at your service.',
-    category: 'Raid',
-    game: 'World of Warcraft',
-    deliveryTime: '2–5 hours',
-    rating: 4.8,
-    reviewCount: 842,
-    badge: 'Top Rated',
-  },
-  {
-    title: 'Arena Rating Boost',
-    description: 'Climb the PvP ladder with professional arena players. Reach your dream rating.',
-    category: 'PvP',
-    game: 'World of Warcraft',
-    deliveryTime: 'Same day',
-    rating: 4.9,
-    reviewCount: 657,
-  },
-  {
-    title: 'Leveling 1–80',
-    description: 'Fast, safe character leveling. Get to max level without the grind.',
-    category: 'Leveling',
-    game: 'World of Warcraft',
-    deliveryTime: '24–48 hours',
-    rating: 4.7,
-    reviewCount: 2103,
-    badge: 'Best Value',
-  },
-];
-
-const hotDeals = [
-  {
-    title: 'Mythic+ Bundle — 10 Keys',
-    description: '10 Mythic+ keystones at a discounted bundle price.',
-    category: 'Dungeon Bundle',
-    originalPrice: '$249.99',
-    dealPrice: '$179.99',
-    endsIn: '2d 14h',
-  },
-  {
-    title: 'Season Raid Special',
-    description: 'Full raid clear with exclusive mount — limited time offer.',
-    category: 'Raid',
-    originalPrice: '$399.99',
-    dealPrice: '$299.99',
-    endsIn: '5d 6h',
-  },
-  {
-    title: 'PvP Coaching + Rating',
-    description: 'One-on-one coaching session plus rating boost to 1800.',
-    category: 'PvP',
-    originalPrice: '$159.99',
-    dealPrice: '$99.99',
-    endsIn: '1d 3h',
-  },
-];
-
-const reviews = [
-  {
-    author: 'Michael R.',
-    rating: 5,
-    date: 'Sep 2026',
-    title: 'Lightning fast and professional',
-    body: 'Ordered a Mythic+ boost and it was done within 2 hours. The booster was friendly and knew exactly what to do. Will order again.',
-    service: 'Mythic+ Dungeon Boost',
-  },
-  {
-    author: 'Sarah K.',
-    rating: 5,
-    date: 'Aug 2026',
-    title: 'Best boosting service I have used',
-    body: 'The raid team was incredible. Got every piece of loot I needed and the communication was seamless throughout the entire process.',
-    service: 'Raid Full Clear',
-  },
-  {
-    author: 'David L.',
-    rating: 4,
-    date: 'Aug 2026',
-    title: 'Great experience overall',
-    body: 'Smooth process from start to finish. The only minor issue was a slight delay, but support handled it immediately and professionally.',
-    service: 'Arena Rating Boost',
-  },
-];
-
-const whyUs = [
-  {
-    icon: <ShieldCheck size={28} />,
-    title: 'Trusted Professionals',
-    description: 'Every booster is vetted and verified. Your account is in safe hands.',
-  },
-  {
-    icon: <Zap size={28} />,
-    title: 'Fast Delivery',
-    description: 'Most orders start within minutes. Get results when you need them.',
-  },
-  {
-    icon: <Trophy size={28} />,
-    title: 'Guaranteed Results',
-    description: 'We deliver what we promise. Full refunds if we do not complete your order.',
-  },
-  {
-    icon: <Headphones size={28} />,
-    title: '24/7 Support',
-    description: 'Our support team is available around the clock to help with any question.',
-  },
-];
+const serviceIcons: Record<ServiceIconKey, ReactNode> = {
+  leveling: <TrendingUp size={28} />,
+  mythic: <Swords size={28} />,
+  raids: <Castle size={28} />,
+  delves: <Compass size={28} />,
+  mounts: <Bird size={28} />,
+  gold: <Coins size={28} />,
+};
 
 const steps = [
-  {
-    number: '01',
-    title: 'Choose Your Service',
-    description: 'Browse our catalog and pick the service that fits your needs.',
-  },
-  {
-    number: '02',
-    title: 'Place Your Order',
-    description: 'Select your options and checkout securely. Get matched instantly.',
-  },
-  {
-    number: '03',
-    title: 'Track Progress',
-    description: 'Watch your order in real-time and chat with your booster directly.',
-  },
-  {
-    number: '04',
-    title: 'Enjoy Results',
-    description: 'Receive your completed order and leave a review for your booster.',
-  },
+  { icon: <Search size={22} />, title: 'Choose Your Service', description: 'Browse the catalog and pick what fits your goals.' },
+  { icon: <SlidersHorizontal size={22} />, title: 'Customize Your Order', description: 'Select options, schedule and preferences.' },
+  { icon: <CreditCard size={22} />, title: 'Complete Payment', description: 'Check out securely in a few clicks.' },
+  { icon: <Trophy size={22} />, title: 'Enjoy Your Boost', description: 'Track progress and enjoy the results.' },
 ];
+
+const features = [
+  { icon: <ShieldCheck size={22} />, title: 'Trusted Boosters', description: 'Every booster is vetted before joining.' },
+  { icon: <Lock size={22} />, title: 'Secure Payments', description: 'Protected checkout, no stored card data.' },
+  { icon: <Zap size={22} />, title: 'Fast Delivery', description: 'Most orders start within minutes.' },
+  { icon: <Headphones size={22} />, title: '24/7 Support', description: 'Real people, around the clock.' },
+  { icon: <Receipt size={22} />, title: 'Transparent Pricing', description: 'Clear prices, no hidden fees.' },
+  { icon: <Star size={22} />, title: 'Customer Reviews', description: 'Honest feedback from real players.' },
+];
+
+function SectionHeading({ eyebrow, title, subtitle, action }: { eyebrow?: string; title: string; subtitle?: string; action?: ReactNode }) {
+  return (
+    <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        {eyebrow && <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{eyebrow}</p>}
+        <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl lg:text-4xl">{title}</h2>
+        {subtitle && <p className="mt-2 max-w-xl text-ink-400">{subtitle}</p>}
+      </div>
+      {action}
+    </div>
+  );
+}
 
 export function HomePage() {
   return (
-    <div className="animate-fade-in">
+    <div>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-radial" />
-        <div className="absolute inset-0 bg-gradient-to-b from-base-950 via-base-900/50 to-base-950" />
-        <div className="container-ak relative py-24 lg:py-36">
-          <div className="mx-auto max-w-3xl text-center space-y-6">
-            <Badge variant="gold" icon={<Sparkles size={12} />}>
-              {brand.tagline}
-            </Badge>
-            <h1 className="font-display text-4xl font-bold leading-tight text-ink-50 sm:text-5xl lg:text-6xl">
-              MASTER YOUR
-              <br />
-              <span className="text-gradient-gold">ADVENTURE</span>
+      <section className="relative -mt-16 flex min-h-[88vh] items-center overflow-hidden lg:-mt-18">
+        <img src={heroImg} alt="" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-hero-overlay" />
+        <div className="container-ak relative pt-28 pb-20 lg:pt-36">
+          <div className="reveal max-w-2xl space-y-6">
+            <Badge variant="gold" icon={<Sparkles size={12} />}>{brand.tagline}</Badge>
+            <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-wide text-ink-50 sm:text-6xl lg:text-7xl">
+              MASTER YOUR <span className="text-gradient-gold">ADVENTURE</span>
             </h1>
-            <p className="text-lg text-ink-300 max-w-xl mx-auto">
-              {brand.description}
-            </p>
-            <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row">
+            <p className="max-w-lg text-base text-ink-200 sm:text-lg">{brand.description}</p>
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Link to="/services">
-                <Button size="lg" rightIcon={<ArrowRight size={18} />}>
-                  Explore Services
-                </Button>
+                <Button size="lg" fullWidth rightIcon={<ArrowRight size={18} />}>Explore Services</Button>
               </Link>
               <Link to="/deals">
-                <Button size="lg" variant="outline" leftIcon={<Flame size={18} />}>
-                  View Deals
-                </Button>
+                <Button size="lg" variant="outline" fullWidth leftIcon={<Flame size={18} />}>View Deals</Button>
               </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm text-ink-300">
+              <span className="flex items-center gap-2"><ShieldCheck size={16} className="text-gold-400" /> Vetted boosters</span>
+              <span className="flex items-center gap-2"><Lock size={16} className="text-gold-400" /> Secure checkout</span>
+              <span className="flex items-center gap-2"><Headphones size={16} className="text-gold-400" /> 24/7 support</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Popular Services */}
-      <section className="container-ak py-16 lg:py-24">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-              Popular Services
-            </h2>
-            <p className="mt-2 text-ink-400">Our most requested World of Warcraft services.</p>
-          </div>
-          <Link to="/services" className="hidden sm:block">
-            <Button variant="ghost" rightIcon={<ArrowRight size={16} />}>
-              View All
-            </Button>
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {popularServices.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+      <section className="container-ak py-20 lg:py-28">
+        <SectionHeading
+          eyebrow="Catalog"
+          title="Popular Services"
+          subtitle="Our most requested World of Warcraft services."
+          action={<Link to="/services"><Button variant="ghost" rightIcon={<ArrowRight size={16} />}>View All</Button></Link>}
+        />
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {placeholderServices.map((s, i) => (
+            <div key={s.title} className="reveal" style={{ animationDelay: `${i * 60}ms` }}>
+              <ServiceCard
+                title={s.title}
+                description={s.description}
+                icon={serviceIcons[s.iconKey]}
+                startingPrice={s.startingPrice}
+                badge={s.badge}
+                ctaLabel="Explore"
+              />
+            </div>
           ))}
         </div>
       </section>
 
       {/* Hot Deals */}
-      <section className="container-ak py-16 lg:py-24">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-              Hot Deals
-            </h2>
-            <p className="mt-2 text-ink-400">Limited-time offers — grab them before they are gone.</p>
+      <section className="border-y border-base-800 bg-base-900/60">
+        <div className="container-ak py-20 lg:py-28">
+          <SectionHeading
+            eyebrow="Limited time"
+            title="Hot Deals"
+            subtitle="Seasonal offers on our most popular runs."
+            action={<Link to="/deals"><Button variant="ghost" rightIcon={<ArrowRight size={16} />}>All Deals</Button></Link>}
+          />
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {placeholderDeals.map((d) => <DealCard key={d.title} {...d} />)}
           </div>
-          <Link to="/deals" className="hidden sm:block">
-            <Button variant="ghost" rightIcon={<ArrowRight size={16} />}>
-              All Deals
-            </Button>
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {hotDeals.map((d) => (
-            <DealCard key={d.title} {...d} />
-          ))}
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="border-y border-base-700 bg-base-900/50">
-        <div className="container-ak py-16 lg:py-24">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-              How It Works
-            </h2>
-            <p className="mt-2 text-ink-400">Get from order to results in four simple steps.</p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step) => (
-              <div key={step.number} className="text-center space-y-3">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold-600/40 bg-gold-500/5 font-display text-xl text-gold-400">
-                  {step.number}
-                </div>
-                <h3 className="font-display text-lg text-ink-50">{step.title}</h3>
-                <p className="text-sm text-ink-400 max-w-xs mx-auto">{step.description}</p>
-              </div>
-            ))}
-          </div>
+      <section className="container-ak py-20 lg:py-28">
+        <div className="mx-auto mb-14 max-w-xl text-center">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">Simple process</p>
+          <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl lg:text-4xl">How It Works</h2>
         </div>
-      </section>
-
-      {/* Why AK Team */}
-      <section className="container-ak py-16 lg:py-24">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-            Why {brand.name}
-          </h2>
-          <p className="mt-2 text-ink-400">Trusted by thousands of players worldwide.</p>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {whyUs.map((item) => (
-            <div
-              key={item.title}
-              className="card-surface card-surface-hover space-y-4 p-6 text-center"
-            >
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gold-500/10 border border-gold-600/30 text-gold-400">
-                {item.icon}
+        <div className="relative grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="gold-hairline absolute top-7 right-[12%] left-[12%] hidden lg:block" />
+          {steps.map((step, i) => (
+            <div key={step.title} className="reveal relative text-center" style={{ animationDelay: `${i * 80}ms` }}>
+              <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold-600/50 bg-base-900 text-gold-300 shadow-gold-sm">
+                {step.icon}
+                <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-gold-gradient text-[11px] font-bold text-base-950">{i + 1}</span>
               </div>
-              <h3 className="font-display text-lg text-ink-50">{item.title}</h3>
-              <p className="text-sm text-ink-400">{item.description}</p>
+              <h3 className="mt-5 font-display text-lg text-ink-50">{step.title}</h3>
+              <p className="mx-auto mt-2 max-w-xs text-sm text-ink-400">{step.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="border-t border-base-700 bg-base-900/50">
-        <div className="container-ak py-16 lg:py-24">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-              Customer Reviews
-            </h2>
-            <p className="mt-2 text-ink-400">What our customers say about their experience.</p>
-          </div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r) => (
-              <ReviewCard key={r.author} {...r} />
+      {/* Why AK Team */}
+      <section className="border-y border-base-800 bg-base-900/60">
+        <div className="container-ak py-20 lg:py-28">
+          <SectionHeading eyebrow="Why us" title={`Why ${brand.name}`} subtitle="Built around trust, speed and transparency." />
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-base-700 bg-base-700 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((f) => (
+              <div key={f.title} className="group flex gap-4 bg-base-900 p-6 transition-colors hover:bg-base-850">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gold-700/40 bg-gold-500/10 text-gold-300 transition-transform group-hover:-translate-y-0.5">{f.icon}</span>
+                <div>
+                  <h3 className="font-display text-base text-ink-50">{f.title}</h3>
+                  <p className="mt-1 text-sm text-ink-400">{f.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Become a Booster CTA */}
-      <section className="container-ak py-16 lg:py-24">
-        <div className="relative overflow-hidden card-surface p-8 lg:p-14 text-center">
-          <div className="absolute inset-0 bg-gold-gradient-soft" />
-          <div className="relative space-y-5">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gold-gradient text-base-950">
-              <ThumbsUp size={28} />
-            </div>
-            <h2 className="font-display text-2xl font-bold text-ink-50 sm:text-3xl">
-              Become a Booster
-            </h2>
-            <p className="text-ink-300 max-w-xl mx-auto">
-              Turn your skills into income. Join our elite team of boosters and earn on your own schedule.
-            </p>
-            <div className="flex justify-center pt-2">
-              <Link to="/become-a-booster">
-                <Button size="lg" rightIcon={<ArrowRight size={18} />}>
-                  Apply Now
-                </Button>
-              </Link>
-            </div>
+      {/* Reviews */}
+      <section className="container-ak py-20 lg:py-28">
+        <SectionHeading eyebrow="Testimonials" title="What Players Say" subtitle="Example reviews — real customer reviews will appear here." />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {placeholderReviews.map((r) => <ReviewCard key={r.author} {...r} />)}
+        </div>
+      </section>
+
+      {/* Become a Booster */}
+      <section className="container-ak pb-24">
+        <div className="relative overflow-hidden rounded-2xl border border-gold-800/50">
+          <img src={heroImg} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-right opacity-40" />
+          <div className="absolute inset-0 bg-hero-overlay" />
+          <div className="relative max-w-xl space-y-5 p-8 sm:p-12 lg:p-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">For players</p>
+            <h2 className="font-display text-3xl font-bold text-ink-50 sm:text-4xl">Turn Your Skills Into Earnings</h2>
+            <p className="text-ink-300">Join AK Team as a professional booster and earn by helping players complete their goals.</p>
+            <Link to="/become-a-booster" className="inline-block">
+              <Button size="lg" rightIcon={<ArrowRight size={18} />}>Become a Booster</Button>
+            </Link>
           </div>
         </div>
       </section>
