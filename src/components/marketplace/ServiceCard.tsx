@@ -13,7 +13,7 @@ export interface ServiceCardProps {
   reviewCount?: number;
   imageUrl?: string;
   icon?: ReactNode;
-  badge?: string;
+  badge?: string | undefined;
   /** Display-only price label, e.g. "$9.99". Real pricing comes later. */
   startingPrice?: string;
   to?: string;
