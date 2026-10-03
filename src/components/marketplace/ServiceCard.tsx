@@ -36,7 +36,7 @@ export function ServiceCard({
   ctaLabel = 'View Service',
 }: ServiceCardProps) {
   return (
-    <Link to={to} className="card-surface card-surface-hover group flex flex-col overflow-hidden">
+    <Link to={to} className="card-surface card-surface-hover group flex h-full flex-col overflow-hidden">
       <div className="relative h-40 overflow-hidden bg-base-800">
         {imageUrl ? (
           <img

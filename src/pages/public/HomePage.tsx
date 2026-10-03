@@ -94,7 +94,7 @@ export function HomePage() {
         />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {placeholderServices.map((s, i) => (
-            <div key={s.title} className="reveal" style={{ animationDelay: `${i * 60}ms` }}>
+            <div key={s.title} className="reveal h-full" style={{ animationDelay: `${i * 60}ms` }}>
               <ServiceCard
                 title={s.title}
                 description={s.description}

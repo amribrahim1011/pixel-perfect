@@ -19,12 +19,12 @@ export interface PlaceholderService {
 }
 
 export const placeholderServices: PlaceholderService[] = [
-  { title: 'Power Leveling', description: 'Reach max level fast with a safe, hand-played route.', iconKey: 'leveling', startingPrice: '$—', badge: 'Popular' },
-  { title: 'Mythic+ Dungeons', description: 'Timed keystones with experienced, coordinated groups.', iconKey: 'mythic', startingPrice: '$—' },
-  { title: 'Raids', description: 'Normal, Heroic and Mythic clears with loot options.', iconKey: 'raids', startingPrice: '$—' },
-  { title: 'Delves', description: 'Bountiful Delves cleared efficiently for top rewards.', iconKey: 'delves', startingPrice: '$—' },
-  { title: 'Mounts', description: 'Rare and prestigious mounts from raids and achievements.', iconKey: 'mounts', startingPrice: '$—' },
-  { title: 'Gold', description: 'Fast, reliable gold delivery on your realm.', iconKey: 'gold', startingPrice: '$—' },
+  { title: 'Power Leveling', description: 'Reach max level fast with a safe, hand-played route.', iconKey: 'leveling', startingPrice: 'TBA', badge: 'Popular' },
+  { title: 'Mythic+ Dungeons', description: 'Timed keystones with experienced, coordinated groups.', iconKey: 'mythic', startingPrice: 'TBA' },
+  { title: 'Raids', description: 'Normal, Heroic and Mythic clears with loot options.', iconKey: 'raids', startingPrice: 'TBA' },
+  { title: 'Delves', description: 'Bountiful Delves cleared efficiently for top rewards.', iconKey: 'delves', startingPrice: 'TBA' },
+  { title: 'Mounts', description: 'Rare and prestigious mounts from raids and achievements.', iconKey: 'mounts', startingPrice: 'TBA' },
+  { title: 'Gold', description: 'Fast, reliable gold delivery on your realm.', iconKey: 'gold', startingPrice: 'TBA' },
 ];
 
 export const placeholderDeals = [
