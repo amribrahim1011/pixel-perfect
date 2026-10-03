@@ -77,6 +77,50 @@ export type Database = {
         }
         Relationships: []
       }
+      role_audit_log: {
+        Row: {
+          action: string
+          changed_by: string | null
+          changed_by_name: string | null
+          created_at: string
+          id: string
+          role_id: string | null
+          role_name: string
+          role_slug: string
+          target_user_id: string
+        }
+        Insert: {
+          action: string
+          changed_by?: string | null
+          changed_by_name?: string | null
+          created_at?: string
+          id?: string
+          role_id?: string | null
+          role_name: string
+          role_slug: string
+          target_user_id: string
+        }
+        Update: {
+          action?: string
+          changed_by?: string | null
+          changed_by_name?: string | null
+          created_at?: string
+          id?: string
+          role_id?: string | null
+          role_name?: string
+          role_slug?: string
+          target_user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "role_audit_log_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       role_permissions: {
         Row: {
           created_at: string
@@ -175,69 +219,25 @@ export type Database = {
           },
         ]
       }
-      role_audit_log: {
-        Row: {
-          id: string
-          target_user_id: string
-          role_id: string | null
-          role_slug: string
-          role_name: string
-          action: string
-          changed_by: string | null
-          changed_by_name: string | null
-          created_at: string
-        }
-        Insert: {
-          id?: string
-          target_user_id: string
-          role_id?: string | null
-          role_slug: string
-          role_name: string
-          action: string
-          changed_by?: string | null
-          changed_by_name?: string | null
-          created_at?: string
-        }
-        Update: {
-          id?: string
-          target_user_id?: string
-          role_id?: string | null
-          role_slug?: string
-          role_name?: string
-          action?: string
-          changed_by?: string | null
-          changed_by_name?: string | null
-          created_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "role_audit_log_role_id_fkey"
-            columns: ["role_id"]
-            isOneToOne: false
-            referencedRelation: "roles"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "role_audit_log_changed_by_fkey"
-            columns: ["changed_by"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "role_audit_log_target_user_id_fkey"
-            columns: ["target_user_id"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      get_admin_users: {
+        Args: never
+        Returns: {
+          avatar_url: string
+          country: string
+          created_at: string
+          display_name: string
+          email: string
+          id: string
+          phone: string
+          status: string
+          username: string
+        }[]
+      }
       get_my_permissions: { Args: never; Returns: string[] }
       has_permission: {
         Args: { _permission: string; _user_id: string }
@@ -246,20 +246,6 @@ export type Database = {
       has_role: {
         Args: { _role_slug: string; _user_id: string }
         Returns: boolean
-      }
-      get_admin_users: {
-        Args: never
-        Returns: {
-          id: string
-          username: string | null
-          display_name: string
-          email: string
-          avatar_url: string | null
-          phone: string | null
-          country: string | null
-          status: string
-          created_at: string
-        }[]
       }
     }
     Enums: {
