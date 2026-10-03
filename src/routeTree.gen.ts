@@ -10,33 +10,598 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BecomeABoosterRouteImport } from './routes/become-a-booster'
+import { Route as DealsRouteImport } from './routes/deals'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminApprovedWithdrawalsRouteImport } from './routes/admin.approved-withdrawals'
+import { Route as AdminBoosterApplicationsRouteImport } from './routes/admin.booster-applications'
+import { Route as AdminBoostersRouteImport } from './routes/admin.boosters'
+import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
+import { Route as AdminCouponsRouteImport } from './routes/admin.coupons'
+import { Route as AdminDealsRouteImport } from './routes/admin.deals'
+import { Route as AdminGamesRouteImport } from './routes/admin.games'
+import { Route as AdminNotificationsRouteImport } from './routes/admin.notifications'
+import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
+import { Route as AdminPaymentsRouteImport } from './routes/admin.payments'
+import { Route as AdminReviewsRouteImport } from './routes/admin.reviews'
+import { Route as AdminRolesPermissionsRouteImport } from './routes/admin.roles-permissions'
+import { Route as AdminServicesRouteImport } from './routes/admin.services'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminSupportRouteImport } from './routes/admin.support'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as BoosterIndexRouteImport } from './routes/booster.index'
+import { Route as BoosterEarningsRouteImport } from './routes/booster.earnings'
+import { Route as BoosterOrdersRouteImport } from './routes/booster.orders'
+import { Route as BoosterProfileRouteImport } from './routes/booster.profile'
+import { Route as BoosterWithdrawalsRouteImport } from './routes/booster.withdrawals'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
+import { Route as DashboardActiveOrdersRouteImport } from './routes/dashboard.active-orders'
+import { Route as DashboardMessagesRouteImport } from './routes/dashboard.messages'
+import { Route as DashboardOrderHistoryRouteImport } from './routes/dashboard.order-history'
+import { Route as DashboardOrdersRouteImport } from './routes/dashboard.orders'
+import { Route as DashboardProfileRouteImport } from './routes/dashboard.profile'
+import { Route as DashboardReviewsRouteImport } from './routes/dashboard.reviews'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard.settings'
+import { Route as DashboardSupportRouteImport } from './routes/dashboard.support'
+import { Route as GamesIndexRouteImport } from './routes/games.index'
+import { Route as GamesSlugRouteImport } from './routes/games.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BecomeABoosterRoute = BecomeABoosterRouteImport.update({
+  id: '/become-a-booster',
+  path: '/become-a-booster',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DealsRoute = DealsRouteImport.update({
+  id: '/deals',
+  path: '/deals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminApprovedWithdrawalsRoute =
+  AdminApprovedWithdrawalsRouteImport.update({
+    id: '/admin/approved-withdrawals',
+    path: '/admin/approved-withdrawals',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminBoosterApplicationsRoute =
+  AdminBoosterApplicationsRouteImport.update({
+    id: '/admin/booster-applications',
+    path: '/admin/booster-applications',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminBoostersRoute = AdminBoostersRouteImport.update({
+  id: '/admin/boosters',
+  path: '/admin/boosters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
+  id: '/admin/categories',
+  path: '/admin/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCouponsRoute = AdminCouponsRouteImport.update({
+  id: '/admin/coupons',
+  path: '/admin/coupons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDealsRoute = AdminDealsRouteImport.update({
+  id: '/admin/deals',
+  path: '/admin/deals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminGamesRoute = AdminGamesRouteImport.update({
+  id: '/admin/games',
+  path: '/admin/games',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
+  id: '/admin/notifications',
+  path: '/admin/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOrdersRoute = AdminOrdersRouteImport.update({
+  id: '/admin/orders',
+  path: '/admin/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/admin/payments',
+  path: '/admin/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReviewsRoute = AdminReviewsRouteImport.update({
+  id: '/admin/reviews',
+  path: '/admin/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRolesPermissionsRoute = AdminRolesPermissionsRouteImport.update({
+  id: '/admin/roles-permissions',
+  path: '/admin/roles-permissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminServicesRoute = AdminServicesRouteImport.update({
+  id: '/admin/services',
+  path: '/admin/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSupportRoute = AdminSupportRouteImport.update({
+  id: '/admin/support',
+  path: '/admin/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoosterIndexRoute = BoosterIndexRouteImport.update({
+  id: '/booster/',
+  path: '/booster/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoosterEarningsRoute = BoosterEarningsRouteImport.update({
+  id: '/booster/earnings',
+  path: '/booster/earnings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoosterOrdersRoute = BoosterOrdersRouteImport.update({
+  id: '/booster/orders',
+  path: '/booster/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoosterProfileRoute = BoosterProfileRouteImport.update({
+  id: '/booster/profile',
+  path: '/booster/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoosterWithdrawalsRoute = BoosterWithdrawalsRouteImport.update({
+  id: '/booster/withdrawals',
+  path: '/booster/withdrawals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardActiveOrdersRoute = DashboardActiveOrdersRouteImport.update({
+  id: '/dashboard/active-orders',
+  path: '/dashboard/active-orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardMessagesRoute = DashboardMessagesRouteImport.update({
+  id: '/dashboard/messages',
+  path: '/dashboard/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardOrderHistoryRoute = DashboardOrderHistoryRouteImport.update({
+  id: '/dashboard/order-history',
+  path: '/dashboard/order-history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardOrdersRoute = DashboardOrdersRouteImport.update({
+  id: '/dashboard/orders',
+  path: '/dashboard/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardProfileRoute = DashboardProfileRouteImport.update({
+  id: '/dashboard/profile',
+  path: '/dashboard/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardReviewsRoute = DashboardReviewsRouteImport.update({
+  id: '/dashboard/reviews',
+  path: '/dashboard/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/dashboard/settings',
+  path: '/dashboard/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardSupportRoute = DashboardSupportRouteImport.update({
+  id: '/dashboard/support',
+  path: '/dashboard/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamesIndexRoute = GamesIndexRouteImport.update({
+  id: '/games/',
+  path: '/games/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamesSlugRoute = GamesSlugRouteImport.update({
+  id: '/games/$slug',
+  path: '/games/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/become-a-booster': typeof BecomeABoosterRoute
+  '/deals': typeof DealsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/register': typeof RegisterRoute
+  '/services': typeof ServicesRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/admin/approved-withdrawals': typeof AdminApprovedWithdrawalsRoute
+  '/admin/booster-applications': typeof AdminBoosterApplicationsRoute
+  '/admin/boosters': typeof AdminBoostersRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/coupons': typeof AdminCouponsRoute
+  '/admin/deals': typeof AdminDealsRoute
+  '/admin/games': typeof AdminGamesRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/roles-permissions': typeof AdminRolesPermissionsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/support': typeof AdminSupportRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/booster/earnings': typeof BoosterEarningsRoute
+  '/booster/orders': typeof BoosterOrdersRoute
+  '/booster/profile': typeof BoosterProfileRoute
+  '/booster/withdrawals': typeof BoosterWithdrawalsRoute
+  '/dashboard/active-orders': typeof DashboardActiveOrdersRoute
+  '/dashboard/messages': typeof DashboardMessagesRoute
+  '/dashboard/order-history': typeof DashboardOrderHistoryRoute
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/profile': typeof DashboardProfileRoute
+  '/dashboard/reviews': typeof DashboardReviewsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/support': typeof DashboardSupportRoute
+  '/games/$slug': typeof GamesSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/booster/': typeof BoosterIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/games/': typeof GamesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/become-a-booster': typeof BecomeABoosterRoute
+  '/deals': typeof DealsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/register': typeof RegisterRoute
+  '/services': typeof ServicesRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/admin/approved-withdrawals': typeof AdminApprovedWithdrawalsRoute
+  '/admin/booster-applications': typeof AdminBoosterApplicationsRoute
+  '/admin/boosters': typeof AdminBoostersRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/coupons': typeof AdminCouponsRoute
+  '/admin/deals': typeof AdminDealsRoute
+  '/admin/games': typeof AdminGamesRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/roles-permissions': typeof AdminRolesPermissionsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/support': typeof AdminSupportRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/booster/earnings': typeof BoosterEarningsRoute
+  '/booster/orders': typeof BoosterOrdersRoute
+  '/booster/profile': typeof BoosterProfileRoute
+  '/booster/withdrawals': typeof BoosterWithdrawalsRoute
+  '/dashboard/active-orders': typeof DashboardActiveOrdersRoute
+  '/dashboard/messages': typeof DashboardMessagesRoute
+  '/dashboard/order-history': typeof DashboardOrderHistoryRoute
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/profile': typeof DashboardProfileRoute
+  '/dashboard/reviews': typeof DashboardReviewsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/support': typeof DashboardSupportRoute
+  '/games/$slug': typeof GamesSlugRoute
+  '/admin': typeof AdminIndexRoute
+  '/booster': typeof BoosterIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/games': typeof GamesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/become-a-booster': typeof BecomeABoosterRoute
+  '/deals': typeof DealsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/register': typeof RegisterRoute
+  '/services': typeof ServicesRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/admin/approved-withdrawals': typeof AdminApprovedWithdrawalsRoute
+  '/admin/booster-applications': typeof AdminBoosterApplicationsRoute
+  '/admin/boosters': typeof AdminBoostersRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/coupons': typeof AdminCouponsRoute
+  '/admin/deals': typeof AdminDealsRoute
+  '/admin/games': typeof AdminGamesRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/roles-permissions': typeof AdminRolesPermissionsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/support': typeof AdminSupportRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/booster/earnings': typeof BoosterEarningsRoute
+  '/booster/orders': typeof BoosterOrdersRoute
+  '/booster/profile': typeof BoosterProfileRoute
+  '/booster/withdrawals': typeof BoosterWithdrawalsRoute
+  '/dashboard/active-orders': typeof DashboardActiveOrdersRoute
+  '/dashboard/messages': typeof DashboardMessagesRoute
+  '/dashboard/order-history': typeof DashboardOrderHistoryRoute
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/profile': typeof DashboardProfileRoute
+  '/dashboard/reviews': typeof DashboardReviewsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/support': typeof DashboardSupportRoute
+  '/games/$slug': typeof GamesSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/booster/': typeof BoosterIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/games/': typeof GamesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/become-a-booster'
+    | '/deals'
+    | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/refund-policy'
+    | '/register'
+    | '/services'
+    | '/support'
+    | '/terms'
+    | '/admin/approved-withdrawals'
+    | '/admin/booster-applications'
+    | '/admin/boosters'
+    | '/admin/categories'
+    | '/admin/coupons'
+    | '/admin/deals'
+    | '/admin/games'
+    | '/admin/notifications'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reviews'
+    | '/admin/roles-permissions'
+    | '/admin/services'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/users'
+    | '/booster/earnings'
+    | '/booster/orders'
+    | '/booster/profile'
+    | '/booster/withdrawals'
+    | '/dashboard/active-orders'
+    | '/dashboard/messages'
+    | '/dashboard/order-history'
+    | '/dashboard/orders'
+    | '/dashboard/profile'
+    | '/dashboard/reviews'
+    | '/dashboard/settings'
+    | '/dashboard/support'
+    | '/games/$slug'
+    | '/admin/'
+    | '/booster/'
+    | '/dashboard/'
+    | '/games/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/become-a-booster'
+    | '/deals'
+    | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/refund-policy'
+    | '/register'
+    | '/services'
+    | '/support'
+    | '/terms'
+    | '/admin/approved-withdrawals'
+    | '/admin/booster-applications'
+    | '/admin/boosters'
+    | '/admin/categories'
+    | '/admin/coupons'
+    | '/admin/deals'
+    | '/admin/games'
+    | '/admin/notifications'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reviews'
+    | '/admin/roles-permissions'
+    | '/admin/services'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/users'
+    | '/booster/earnings'
+    | '/booster/orders'
+    | '/booster/profile'
+    | '/booster/withdrawals'
+    | '/dashboard/active-orders'
+    | '/dashboard/messages'
+    | '/dashboard/order-history'
+    | '/dashboard/orders'
+    | '/dashboard/profile'
+    | '/dashboard/reviews'
+    | '/dashboard/settings'
+    | '/dashboard/support'
+    | '/games/$slug'
+    | '/admin'
+    | '/booster'
+    | '/dashboard'
+    | '/games'
+  id:
+    | '__root__'
+    | '/'
+    | '/become-a-booster'
+    | '/deals'
+    | '/how-it-works'
+    | '/login'
+    | '/privacy'
+    | '/refund-policy'
+    | '/register'
+    | '/services'
+    | '/support'
+    | '/terms'
+    | '/admin/approved-withdrawals'
+    | '/admin/booster-applications'
+    | '/admin/boosters'
+    | '/admin/categories'
+    | '/admin/coupons'
+    | '/admin/deals'
+    | '/admin/games'
+    | '/admin/notifications'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reviews'
+    | '/admin/roles-permissions'
+    | '/admin/services'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/users'
+    | '/booster/earnings'
+    | '/booster/orders'
+    | '/booster/profile'
+    | '/booster/withdrawals'
+    | '/dashboard/active-orders'
+    | '/dashboard/messages'
+    | '/dashboard/order-history'
+    | '/dashboard/orders'
+    | '/dashboard/profile'
+    | '/dashboard/reviews'
+    | '/dashboard/settings'
+    | '/dashboard/support'
+    | '/games/$slug'
+    | '/admin/'
+    | '/booster/'
+    | '/dashboard/'
+    | '/games/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BecomeABoosterRoute: typeof BecomeABoosterRoute
+  DealsRoute: typeof DealsRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
+  RegisterRoute: typeof RegisterRoute
+  ServicesRoute: typeof ServicesRoute
+  SupportRoute: typeof SupportRoute
+  TermsRoute: typeof TermsRoute
+  AdminApprovedWithdrawalsRoute: typeof AdminApprovedWithdrawalsRoute
+  AdminBoosterApplicationsRoute: typeof AdminBoosterApplicationsRoute
+  AdminBoostersRoute: typeof AdminBoostersRoute
+  AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminCouponsRoute: typeof AdminCouponsRoute
+  AdminDealsRoute: typeof AdminDealsRoute
+  AdminGamesRoute: typeof AdminGamesRoute
+  AdminNotificationsRoute: typeof AdminNotificationsRoute
+  AdminOrdersRoute: typeof AdminOrdersRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminReviewsRoute: typeof AdminReviewsRoute
+  AdminRolesPermissionsRoute: typeof AdminRolesPermissionsRoute
+  AdminServicesRoute: typeof AdminServicesRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminSupportRoute: typeof AdminSupportRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  BoosterEarningsRoute: typeof BoosterEarningsRoute
+  BoosterOrdersRoute: typeof BoosterOrdersRoute
+  BoosterProfileRoute: typeof BoosterProfileRoute
+  BoosterWithdrawalsRoute: typeof BoosterWithdrawalsRoute
+  DashboardActiveOrdersRoute: typeof DashboardActiveOrdersRoute
+  DashboardMessagesRoute: typeof DashboardMessagesRoute
+  DashboardOrderHistoryRoute: typeof DashboardOrderHistoryRoute
+  DashboardOrdersRoute: typeof DashboardOrdersRoute
+  DashboardProfileRoute: typeof DashboardProfileRoute
+  DashboardReviewsRoute: typeof DashboardReviewsRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardSupportRoute: typeof DashboardSupportRoute
+  GamesSlugRoute: typeof GamesSlugRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  BoosterIndexRoute: typeof BoosterIndexRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  GamesIndexRoute: typeof GamesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +613,355 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/become-a-booster': {
+      id: '/become-a-booster'
+      path: '/become-a-booster'
+      fullPath: '/become-a-booster'
+      preLoaderRoute: typeof BecomeABoosterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deals': {
+      id: '/deals'
+      path: '/deals'
+      fullPath: '/deals'
+      preLoaderRoute: typeof DealsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/approved-withdrawals': {
+      id: '/admin/approved-withdrawals'
+      path: '/admin/approved-withdrawals'
+      fullPath: '/admin/approved-withdrawals'
+      preLoaderRoute: typeof AdminApprovedWithdrawalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/booster-applications': {
+      id: '/admin/booster-applications'
+      path: '/admin/booster-applications'
+      fullPath: '/admin/booster-applications'
+      preLoaderRoute: typeof AdminBoosterApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/boosters': {
+      id: '/admin/boosters'
+      path: '/admin/boosters'
+      fullPath: '/admin/boosters'
+      preLoaderRoute: typeof AdminBoostersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/categories': {
+      id: '/admin/categories'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof AdminCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/coupons': {
+      id: '/admin/coupons'
+      path: '/admin/coupons'
+      fullPath: '/admin/coupons'
+      preLoaderRoute: typeof AdminCouponsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/deals': {
+      id: '/admin/deals'
+      path: '/admin/deals'
+      fullPath: '/admin/deals'
+      preLoaderRoute: typeof AdminDealsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/games': {
+      id: '/admin/games'
+      path: '/admin/games'
+      fullPath: '/admin/games'
+      preLoaderRoute: typeof AdminGamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/notifications': {
+      id: '/admin/notifications'
+      path: '/admin/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/orders': {
+      id: '/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/admin/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reviews': {
+      id: '/admin/reviews'
+      path: '/admin/reviews'
+      fullPath: '/admin/reviews'
+      preLoaderRoute: typeof AdminReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/roles-permissions': {
+      id: '/admin/roles-permissions'
+      path: '/admin/roles-permissions'
+      fullPath: '/admin/roles-permissions'
+      preLoaderRoute: typeof AdminRolesPermissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/services': {
+      id: '/admin/services'
+      path: '/admin/services'
+      fullPath: '/admin/services'
+      preLoaderRoute: typeof AdminServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/support': {
+      id: '/admin/support'
+      path: '/admin/support'
+      fullPath: '/admin/support'
+      preLoaderRoute: typeof AdminSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booster/': {
+      id: '/booster/'
+      path: '/booster'
+      fullPath: '/booster/'
+      preLoaderRoute: typeof BoosterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booster/earnings': {
+      id: '/booster/earnings'
+      path: '/booster/earnings'
+      fullPath: '/booster/earnings'
+      preLoaderRoute: typeof BoosterEarningsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booster/orders': {
+      id: '/booster/orders'
+      path: '/booster/orders'
+      fullPath: '/booster/orders'
+      preLoaderRoute: typeof BoosterOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booster/profile': {
+      id: '/booster/profile'
+      path: '/booster/profile'
+      fullPath: '/booster/profile'
+      preLoaderRoute: typeof BoosterProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booster/withdrawals': {
+      id: '/booster/withdrawals'
+      path: '/booster/withdrawals'
+      fullPath: '/booster/withdrawals'
+      preLoaderRoute: typeof BoosterWithdrawalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/active-orders': {
+      id: '/dashboard/active-orders'
+      path: '/dashboard/active-orders'
+      fullPath: '/dashboard/active-orders'
+      preLoaderRoute: typeof DashboardActiveOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/messages': {
+      id: '/dashboard/messages'
+      path: '/dashboard/messages'
+      fullPath: '/dashboard/messages'
+      preLoaderRoute: typeof DashboardMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/order-history': {
+      id: '/dashboard/order-history'
+      path: '/dashboard/order-history'
+      fullPath: '/dashboard/order-history'
+      preLoaderRoute: typeof DashboardOrderHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/orders': {
+      id: '/dashboard/orders'
+      path: '/dashboard/orders'
+      fullPath: '/dashboard/orders'
+      preLoaderRoute: typeof DashboardOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/profile': {
+      id: '/dashboard/profile'
+      path: '/dashboard/profile'
+      fullPath: '/dashboard/profile'
+      preLoaderRoute: typeof DashboardProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/reviews': {
+      id: '/dashboard/reviews'
+      path: '/dashboard/reviews'
+      fullPath: '/dashboard/reviews'
+      preLoaderRoute: typeof DashboardReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/dashboard/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/support': {
+      id: '/dashboard/support'
+      path: '/dashboard/support'
+      fullPath: '/dashboard/support'
+      preLoaderRoute: typeof DashboardSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/games/': {
+      id: '/games/'
+      path: '/games'
+      fullPath: '/games/'
+      preLoaderRoute: typeof GamesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/games/$slug': {
+      id: '/games/$slug'
+      path: '/games/$slug'
+      fullPath: '/games/$slug'
+      preLoaderRoute: typeof GamesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BecomeABoosterRoute: BecomeABoosterRoute,
+  DealsRoute: DealsRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
+  RegisterRoute: RegisterRoute,
+  ServicesRoute: ServicesRoute,
+  SupportRoute: SupportRoute,
+  TermsRoute: TermsRoute,
+  AdminApprovedWithdrawalsRoute: AdminApprovedWithdrawalsRoute,
+  AdminBoosterApplicationsRoute: AdminBoosterApplicationsRoute,
+  AdminBoostersRoute: AdminBoostersRoute,
+  AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminCouponsRoute: AdminCouponsRoute,
+  AdminDealsRoute: AdminDealsRoute,
+  AdminGamesRoute: AdminGamesRoute,
+  AdminNotificationsRoute: AdminNotificationsRoute,
+  AdminOrdersRoute: AdminOrdersRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminReviewsRoute: AdminReviewsRoute,
+  AdminRolesPermissionsRoute: AdminRolesPermissionsRoute,
+  AdminServicesRoute: AdminServicesRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminSupportRoute: AdminSupportRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  BoosterEarningsRoute: BoosterEarningsRoute,
+  BoosterOrdersRoute: BoosterOrdersRoute,
+  BoosterProfileRoute: BoosterProfileRoute,
+  BoosterWithdrawalsRoute: BoosterWithdrawalsRoute,
+  DashboardActiveOrdersRoute: DashboardActiveOrdersRoute,
+  DashboardMessagesRoute: DashboardMessagesRoute,
+  DashboardOrderHistoryRoute: DashboardOrderHistoryRoute,
+  DashboardOrdersRoute: DashboardOrdersRoute,
+  DashboardProfileRoute: DashboardProfileRoute,
+  DashboardReviewsRoute: DashboardReviewsRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardSupportRoute: DashboardSupportRoute,
+  GamesSlugRoute: GamesSlugRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  BoosterIndexRoute: BoosterIndexRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+  GamesIndexRoute: GamesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
