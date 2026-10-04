@@ -81,7 +81,7 @@ export function DashboardShell({ sections: allSections, brandLabel, children }: 
                     {section.items.map((item) => {
                       const active =
                         location.pathname === item.to ||
-                        (item.to !== `/${brandLabel}` && location.pathname.startsWith(item.to));
+                        (item.to !== `/${brandLabel.toLowerCase()}` && location.pathname.startsWith(item.to));
                       return (
                         <Link
                           key={item.to}
